@@ -1,0 +1,14 @@
+{
+  "name": "yad2-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Niv Ezra",
+  "license": "MIT",
+  "scripts": {
+    "scrape": "node scraper.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "telenode-js": "^1.1.5"
+  }
+}

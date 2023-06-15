@@ -1,0 +1,10 @@
+{
+  "telegramApiToken": null,
+  "chatId": null,
+  "projects": [
+    {
+      "topic": "",
+      "url": ""
+    }
+  ]
+}
