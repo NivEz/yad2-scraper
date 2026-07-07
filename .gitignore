@@ -4,3 +4,7 @@ node_modules
 localTests.js
 
 push_me
+
+__pycache__
+*.pyc
+.venv
