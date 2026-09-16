@@ -23,19 +23,29 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "${{ secrets.GIT_CONFIG_EMAIL }}"
-
+      
       - name: Run scraper
-        run: |
-          export API_TOKEN=${{ secrets.API_TOKEN }}
-          export CHAT_ID=${{ secrets.CHAT_ID }}
-          yarn scrape
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          API_URL: ${{ secrets.API_URL }}
+          API_KEY: ${{ secrets.API_KEY }}
+          SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
+        run: node scraper.js
 
-      - name: Push new json data if needed
+      - name: Push changes to GitHub
         run: |
           if [ -f ./push_me ]; then
-            echo Pushing to Github...
+            echo "Checking for file changes..."
             git add .
-            DATE=$(date +"%F, %H:%M:%S")
-            git commit -m "updated data - $DATE"
-            git push
+            # בדיקה אם יש שינויים שנשמרו ב-git
+            if ! git diff-index --quiet HEAD; then
+              echo "Pushing updated data to Github..."
+              DATE=$(date +"%F, %H:%M:%S")
+              git commit -m "updated data - $DATE"
+              git push
+            else
+              echo "No data changes detected. Skipping push."
+            fi
+            rm -f ./push_me
           fi

@@ -3,8 +3,9 @@
   "chatId": null,
   "projects": [
     {
-      "topic": "",
-      "url": ""
+      "topic": "Cellular Arbitrage Search",
+      "url": "https://www.yad2.co.il/market/collections/mobile-devices_mobile-devices?minPrice=500&maxPrice=5000",
+      "disabled": false
     }
   ]
 }
