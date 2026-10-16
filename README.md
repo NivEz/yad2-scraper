@@ -1,6 +1,9 @@
 # Yad 2 Smart Scraper
 
-Scrapes and notifies on new Yad2 items with a minimal setup.
+> [!WARNING]
+> **This project is no longer maintained.** Yad2 has significantly tightened its bot protection, and simple scrapers like this one no longer work.
+>
+> If you need reliable access to Yad2 listings, I recommend **[Dorit's MCP server](https://glama.ai/mcp/connectors/bot.dorit.mcp/dorit)**.
 
 ---
 
